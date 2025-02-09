@@ -2,21 +2,19 @@
 
 A Docker container to run Blender with GPU support.
 
-## Build
-```bash
-$ docker build . -t blender
-```
-
 ## Run locally 
 
 ### Confirm GPU support
+
+Look for your GPU in the output:
+
 ```bash
-$ docker run --gpus all --entrypoint nvidia-smi blender
+$ docker run --gpus all --entrypoint nvidia-smi steren/blender
 ```
 
-### Check version
+### Check exact Blender version
 ```bash
-$ docker run --gpus all blender --version
+$ docker run --gpus all steren/blender --version
 ```
 
 ### Render a scene
@@ -24,5 +22,10 @@ $ docker run --gpus all blender --version
 See CLI options [here](https://docs.blender.org/manual/en/4.2/advanced/command_line/index.html)
 
 ```bash
-$ docker run -v ./examples:/in -v ./output:/out --gpus all blender --background /in/basic.blend --render-output /out/render_ --engine CYCLES --render-frame 1
+$ docker run -v ./examples:/in -v ./output:/out --gpus all steren/blender --background /in/basic.blend --render-output /out/render_ --engine CYCLES --render-frame 1
+```
+
+## Build
+```bash
+$ docker build . -t steren/blender
 ```
