@@ -25,6 +25,8 @@ See CLI options [here](https://docs.blender.org/manual/en/4.2/advanced/command_l
 $ docker run -v ./examples:/in -v ./output:/out --gpus all steren/blender --background /in/basic.blend --render-output /out/render_ --engine CYCLES --render-frame 1
 ```
 
+But it seems like the abose uses CPU. Try adding `-- --cycles-device CUDA` to the command line.
+
 ## Build
 ```bash
 $ docker build . -t steren/blender
