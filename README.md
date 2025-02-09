@@ -1,10 +1,10 @@
-# cloud-run-blender-gpu
+# Blender with GPU on Cloud Run
 
 
 ```
-# build
+# Build
 $ docker build . -t blender
 
-# Render a scene
+# Run locally and render a scene
 $ docker run -v ./examples:/in -v ./output:/out --gpus all blender --background /in/basic.blend --render-output /out/render_ --engine CYCLES --render-frame 1
 ```
