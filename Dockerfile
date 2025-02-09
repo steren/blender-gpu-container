@@ -51,3 +51,5 @@ RUN ${BLENDERPY} -m ensurepip && ${BLENDERPIP} install --upgrade pip && ${BLENDE
 
 # Set the working directory
 WORKDIR /
+
+ENTRYPOINT ["blender"]
